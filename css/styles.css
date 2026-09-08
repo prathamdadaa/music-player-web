@@ -252,9 +252,20 @@ body {
   color: #1db954;
 }
 
+.card-footer-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-text {
+  overflow: hidden;
+  flex: 1;
+}
+
 .card h4 {
   font-size: 14px;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -265,10 +276,25 @@ body {
   color: #b3b3b3;
 }
 
+/* Card Download Button */
+.card-download-btn {
+  background: none;
+  border: none;
+  color: #b3b3b3;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 4px;
+  transition: color 0.2s;
+}
+
+.card-download-btn:hover {
+  color: #1db954;
+}
+
 .card .play-card-btn {
   position: absolute;
   right: 24px;
-  bottom: 70px;
+  bottom: 75px;
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -305,7 +331,7 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-  width: 25%;
+  width: 28%;
 }
 
 .now-playing-cover-wrap {
@@ -314,6 +340,7 @@ body {
   height: 52px;
   border-radius: 4px;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .now-playing-cover-wrap img {
@@ -339,16 +366,23 @@ body {
 .track-details {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .track-title {
   font-size: 14px;
   font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .track-artist {
   font-size: 12px;
   color: #b3b3b3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .like-btn {
@@ -357,7 +391,20 @@ body {
   color: #b3b3b3;
   cursor: pointer;
   font-size: 16px;
-  margin-left: 8px;
+}
+
+.player-download-icon {
+  background: none;
+  border: none;
+  color: #b3b3b3;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.player-download-icon:hover {
+  color: #1db954;
 }
 
 .player-controls {
