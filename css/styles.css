@@ -22,7 +22,9 @@ body {
   padding: 8px;
 }
 
-/* Sidebar Styling */
+/* ==========================================
+   SIDEBAR STYLING
+   ========================================== */
 .sidebar {
   width: 300px;
   display: flex;
@@ -121,7 +123,9 @@ body {
   color: #b3b3b3;
 }
 
-/* Main Content Area */
+/* ==========================================
+   MAIN CONTENT AREA
+   ========================================== */
 .main-content {
   flex: 1;
   background: linear-gradient(to bottom, #222222, #121212);
@@ -190,7 +194,9 @@ body {
   font-size: 22px;
 }
 
-/* Grid & Music Card Styling */
+/* ==========================================
+   GRID & MUSIC CARDS STYLING
+   ========================================== */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
@@ -211,7 +217,6 @@ body {
   background-color: #282828;
 }
 
-/* Card Image & Audio Logo Overlay */
 .card-img-container {
   position: relative;
   width: 100%;
@@ -276,7 +281,6 @@ body {
   color: #b3b3b3;
 }
 
-/* Card Download Button */
 .card-download-btn {
   background: none;
   border: none;
@@ -316,7 +320,9 @@ body {
   transform: translateY(0);
 }
 
-/* Player Bar Styling */
+/* ==========================================
+   BOTTOM PLAYER BAR
+   ========================================== */
 .player {
   height: 90px;
   background-color: #000000;
@@ -468,4 +474,113 @@ input[type="range"] {
   gap: 8px;
   width: 20%;
   justify-content: flex-end;
+}
+
+/* ==========================================
+   MOBILE & RESPONSIVE STYLES
+   ========================================== */
+
+@media (max-width: 768px) {
+  body {
+    overflow-y: auto;
+  }
+
+  .container {
+    flex-direction: column;
+    height: auto;
+    padding: 0 8px;
+    margin-bottom: 110px; /* Player bar gap */
+  }
+
+  .sidebar {
+    width: 100%;
+    gap: 8px;
+  }
+
+  .library-section {
+    max-height: 150px;
+  }
+
+  .main-content {
+    padding: 16px 12px;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .user-profile {
+    justify-content: space-between;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .card {
+    padding: 10px;
+  }
+
+  .card .play-card-btn {
+    bottom: 60px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+    opacity: 1; /* Always visible on mobile */
+    transform: translateY(0);
+  }
+
+  .player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    padding: 8px 12px;
+    flex-direction: column;
+    gap: 8px;
+    background-color: #121212;
+    z-index: 1000;
+  }
+
+  .now-playing {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .now-playing-cover-wrap {
+    width: 40px;
+    height: 40px;
+  }
+
+  .player-controls {
+    width: 100%;
+    gap: 4px;
+  }
+
+  .volume-controls {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card h4 {
+    font-size: 13px;
+  }
+
+  .card p {
+    font-size: 11px;
+  }
 }
