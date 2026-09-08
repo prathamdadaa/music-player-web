@@ -1,4 +1,3 @@
-// Default Audio Cover Image with Music Theme
 const defaultCover = "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=300&auto=format&fit=crop&q=60";
 
 // Song Data List connected to local 'songs' folder
@@ -66,22 +65,30 @@ const totalDurationLabel = document.getElementById("total-duration");
 const songsGrid = document.getElementById("songs-grid");
 const searchInput = document.getElementById("search-input");
 const likeBtn = document.getElementById("like-btn");
+const playerDownloadBtn = document.getElementById("player-download-btn");
 
-// Render Songs Grid with Audio Logo Overlay
+// Render Songs Grid with Download Button on each card
 function renderSongs(songList) {
   songsGrid.innerHTML = "";
   songList.forEach((song, index) => {
     const card = document.createElement("div");
     card.classList.add("card");
     card.innerHTML = `
-      <div class="card-img-container">
+      <div class="card-img-container" onclick="playSong(${index})">
         <img src="${song.cover}" alt="${song.title}">
         <div class="audio-logo-overlay">
           <i class="fa-solid fa-compact-disc"></i>
         </div>
       </div>
-      <h4>${song.title}</h4>
-      <p>${song.artist}</p>
+      <div class="card-footer-info">
+        <div class="card-text" onclick="playSong(${index})">
+          <h4>${song.title}</h4>
+          <p>${song.artist}</p>
+        </div>
+        <a href="${song.src}" class="card-download-btn" title="Download Song" download onclick="event.stopPropagation()">
+          <i class="fa-solid fa-download"></i>
+        </a>
+      </div>
       <button class="play-card-btn" onclick="playSong(${index})">
         <i class="fa-solid fa-play"></i>
       </button>
@@ -99,6 +106,9 @@ function playSong(index) {
   currentCover.src = song.cover;
   currentTitle.textContent = song.title;
   currentArtist.textContent = song.artist;
+  
+  // Set link for download button in player bar
+  playerDownloadBtn.href = song.src;
 
   audio.play();
   isPlaying = true;
@@ -196,3 +206,5 @@ function formatTime(seconds) {
 // Initialization
 playBtn.addEventListener("click", togglePlay);
 renderSongs(songs);
+// Set initial player download link to the first song
+playerDownloadBtn.href = songs[0].src;
