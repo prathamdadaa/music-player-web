@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>DADA - Web Player</title>
   <link rel="stylesheet" href="css/styles.css" />
+  <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body>
@@ -31,24 +32,17 @@
 
         <div class="library-list">
           <div class="playlist-item">
-            <img src="https://picsum.photos/id/10/50/50" alt="Cover" />
+            <div class="playlist-icon"><i class="fa-solid fa-heart"></i></div>
             <div class="playlist-info">
               <h4>Liked Songs</h4>
-              <p>Playlist • 12 songs</p>
+              <p>Playlist • 6 songs</p>
             </div>
           </div>
           <div class="playlist-item">
-            <img src="https://picsum.photos/id/20/50/50" alt="Cover" />
+            <div class="playlist-icon"><i class="fa-solid fa-music"></i></div>
             <div class="playlist-info">
-              <h4>Chill Lofi Beats</h4>
-              <p>Playlist • Spotify</p>
-            </div>
-          </div>
-          <div class="playlist-item">
-            <img src="https://picsum.photos/id/30/50/50" alt="Cover" />
-            <div class="playlist-info">
-              <h4>Top Hits 2026</h4>
-              <p>Playlist • Spotify</p>
+              <h4>Devotional Songs</h4>
+              <p>Playlist • Local Collection</p>
             </div>
           </div>
         </div>
@@ -68,23 +62,24 @@
         </div>
       </header>
 
-      <section class="hero-section">
-        <h2>Good evening</h2>
-        <div class="cards-grid" id="featured-grid">
-        </div>
-      </section>
-
       <section class="section">
-        <h3>Made For You</h3>
+        <h3>All Songs</h3>
         <div class="cards-grid" id="songs-grid">
+          <!-- Dynamically Populated by JavaScript -->
         </div>
       </section>
     </main>
   </div>
 
+  <!-- BOTTOM PLAYER BAR -->
   <footer class="player">
     <div class="now-playing">
-      <img src="https://picsum.photos/id/1025/60/60" id="current-cover" alt="Album Cover" />
+      <div class="now-playing-cover-wrap">
+        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=300&auto=format&fit=crop&q=60" id="current-cover" alt="Album Cover" />
+        <div class="player-logo-overlay">
+          <i class="fa-solid fa-music"></i>
+        </div>
+      </div>
       <div class="track-details">
         <span class="track-title" id="current-title">Select a song</span>
         <span class="track-artist" id="current-artist">--</span>
