@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DADA - Web Player</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <title>Spotify - Web Player</title>
+  <link rel="stylesheet" href="styles.css" />
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
@@ -16,7 +16,7 @@
       <div class="nav-section">
         <div class="logo">
           <i class="fa-brands fa-spotify"></i>
-          <span>DADA</span>
+          <span>Spotify</span>
         </div>
         <nav class="nav-links">
           <a href="#" class="active"><i class="fa-solid fa-house"></i> Home</a>
@@ -85,6 +85,10 @@
         <span class="track-artist" id="current-artist">--</span>
       </div>
       <button class="like-btn" id="like-btn"><i class="fa-regular fa-heart"></i></button>
+      <!-- Download Button in Player -->
+      <a id="player-download-btn" class="player-download-icon" title="Download Song" download>
+        <i class="fa-solid fa-download"></i>
+      </a>
     </div>
 
     <div class="player-controls">
@@ -110,6 +114,6 @@
   </footer>
 
   <audio id="audio-player"></audio>
-  <script src="js/script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
